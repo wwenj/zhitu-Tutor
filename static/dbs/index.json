@@ -1,0 +1,640 @@
+{
+  "error_code": 0,
+  "message": "success",
+  "data": {
+    "teacher": [{
+      "id": 122,
+      "realname": "王婧",
+      "name": "王老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/7a899e510fb30f2400a44540c195d143ad4b03b2.jpg",
+      "subject": [{
+        "id": 17,
+        "label": "化学",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13244204406",
+      "school": "10010",
+      "source": 2,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 3,
+      "teach_time": 22
+    }, {
+      "id": 121,
+      "realname": "王微",
+      "name": "王老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/83025aafa40f4bfbb6d337170a4f78f0f7361875.jpg",
+      "subject": [{
+        "id": 17,
+        "label": "化学",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "17072366150",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 20,
+      "teach_time": 30
+    }, {
+      "id": 120,
+      "realname": "吴伟华",
+      "name": "吴老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/11385343fbf2b2112c3c2c0dc38065380cd78e67.jpg",
+      "subject": [{
+        "id": 14,
+        "label": "数学",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "15947988333",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 10,
+      "teach_time": 20
+    }, {
+      "id": 119,
+      "realname": "王老师",
+      "name": "王老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/562c11dfa9ec8a13e5d6f9a3fe03918fa1ecc0a1.jpg",
+      "subject": [{
+        "id": 16,
+        "label": "物理",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "15843274037",
+      "school": "10010",
+      "source": 2,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 20,
+      "teach_time": 28
+    }, {
+      "id": 118,
+      "realname": "薛雨",
+      "name": "薛老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/0df431adcbef7609843430dc27dda3cc7cd99eb2.jpg",
+      "subject": [{
+        "id": 16,
+        "label": "物理",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "18686568689",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 5,
+      "teach_time": 20
+    }, {
+      "id": 117,
+      "realname": "许艳强",
+      "name": "许老师(男)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/241f95cad1c8a786dc38e34d6e09c93d70cf5066.jpg",
+      "subject": [{
+        "id": 16,
+        "label": "物理",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13944203402",
+      "school": "10010",
+      "source": 2,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 15,
+      "teach_time": 26
+    }, {
+      "id": 116,
+      "realname": "闫老师",
+      "name": "闫老师(男)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/e1fe9925bc315c60c286c2ac84b1cb1349547766.jpg",
+      "subject": [{
+        "id": 16,
+        "label": "物理",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "15844211299",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 6,
+      "teach_time": 14
+    }, {
+      "id": 115,
+      "realname": "于淳任",
+      "name": "于老师(男)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/2fdda3cc7cd98d10d4c7a572283fb80e7bec9066.jpg",
+      "subject": [{
+        "id": 13,
+        "label": "语文",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "15304440201",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 4,
+      "teach_time": 18
+    }, {
+      "id": 114,
+      "realname": "于美玲",
+      "name": "于老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/730e0cf3d7ca7bcb94b6696cb7096b63f724a8a0.jpg",
+      "subject": [{
+        "id": 17,
+        "label": "化学",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "15043209705",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 7,
+      "teach_time": 36
+    }, {
+      "id": 113,
+      "realname": "赵春霜",
+      "name": "赵老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/f2deb48f8c5494ee1f1ea65a24f5e0fe99257eb1.jpg",
+      "subject": [{
+        "id": 18,
+        "label": "生物",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13894245625",
+      "school": "10010",
+      "source": 2,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 5,
+      "teach_time": 32
+    }, {
+      "id": 112,
+      "realname": "赵英范",
+      "name": "赵老师(男)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/902397dda144ad3491832ec4d9a20cf431ad85b1.jpg",
+      "subject": [{
+        "id": 14,
+        "label": "数学",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13596222627",
+      "school": "10010",
+      "source": 2,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 15,
+      "teach_time": 24
+    }, {
+      "id": 111,
+      "realname": "郑老师",
+      "name": "郑老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/0df431adcbef76099b8937dc27dda3cc7dd99ef7.jpg",
+      "subject": [{
+        "id": 21,
+        "label": "地理",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "18686335365",
+      "school": "10010",
+      "source": 2,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 8,
+      "teach_time": 16
+    }, {
+      "id": 110,
+      "realname": "高原",
+      "name": "高老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/48540923dd54564e6db74a7abade9c82d0584fa7.jpg",
+      "subject": [{
+        "id": 15,
+        "label": "英语",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13654499170",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 10,
+      "teach_time": 45
+    }, {
+      "id": 109,
+      "realname": "高山",
+      "name": "高老师(男)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/5bafa40f4bfbfbede5659f3c71f0f736afc31fb0.jpg",
+      "subject": [{
+        "id": 13,
+        "label": "语文",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "15143229461",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 6,
+      "teach_time": 18
+    }, {
+      "id": 108,
+      "realname": "刘丽男",
+      "name": "刘老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/6609c93d70cf3bc7843c64afd800baa1cd112ab0.jpg",
+      "subject": [{
+        "id": 16,
+        "label": "物理",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "18343219692",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 3,
+      "teach_time": 28
+    }, {
+      "id": 107,
+      "realname": "刘颖",
+      "name": "刘老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/9d82d158ccbf6c81850b85abb53eb13533fa40b0.jpg",
+      "subject": [{
+        "id": 15,
+        "label": "英语",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13944229237",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 11,
+      "teach_time": 25
+    }, {
+      "id": 106,
+      "realname": "潘月",
+      "name": "潘老师(女)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/a9d3fd1f4134970a21f1be6c9ccad1c8a6865df6.jpg",
+      "subject": [{
+        "id": 14,
+        "label": "数学",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13944693405",
+      "school": "10010",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 6,
+      "teach_time": 10
+    }, {
+      "id": 105,
+      "realname": "姜伟",
+      "name": "姜老师(男)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/64380cd7912397ddbbd3e5465082b2b7d1a287cd.jpg",
+      "subject": [{
+        "id": 14,
+        "label": "数学",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 7,
+        "label": "初中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "13604474991",
+      "school": "10010",
+      "source": 2,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 25,
+      "teach_time": 30
+    }, {
+      "id": 104,
+      "realname": "毕老师",
+      "name": "毕老师(男)",
+      "image": "http:\/\/api.zhituteam.com\/upload\/userimage\/8644ebf81a4c510f250f9f586959252dd52aa5ad.jpg",
+      "subject": [{
+        "id": 18,
+        "label": "生物",
+        "sort": 0
+      }],
+      "grade": [{
+        "id": 10,
+        "label": "高中",
+        "sort": 0
+      }],
+      "type": [{
+        "id": 24,
+        "label": "专职老师",
+        "sort": 0
+      }],
+      "extend_tag": [{
+        "id": 1,
+        "label": "专职教师",
+        "sort": 0
+      }],
+      "phone": "15981165881",
+      "school": "山西师范大学",
+      "source": 3,
+      "is_confirm": 0,
+      "is_star": 0,
+      "teach_year": 5,
+      "teach_time": 20
+    }],
+    "subjects": [{
+      "id": 13,
+      "name": "语文",
+      "icon": "http:\/\/api.zhituteam.com\/upload\/icon\/chinese.png"
+    }, {
+      "id": 14,
+      "name": "数学",
+      "icon": "http:\/\/api.zhituteam.com\/upload\/icon\/math.png"
+    }, {
+      "id": 15,
+      "name": "英语",
+      "icon": "http:\/\/api.zhituteam.com\/upload\/icon\/english.png"
+    }, {
+      "id": 16,
+      "name": "物理",
+      "icon": "http:\/\/api.zhituteam.com\/upload\/icon\/physical.png"
+    }, {
+      "id": 17,
+      "name": "化学",
+      "icon": "http:\/\/api.zhituteam.com\/upload\/icon\/chemical.png"
+    }],
+    "banner": [{
+      "url": 1,
+      "image": "http:\/\/api.zhituteam.com\/upload\/banner\/banner.png"
+    }]
+  }
+}
