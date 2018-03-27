@@ -30,14 +30,18 @@
     <div class="hot-teacher">
       热门教师
     </div>
-    <teacher-list></teacher-list>
+    <TeacherList :teacherLists="HomeData.teacher"></TeacherList>
   </div>
 </template>
 
 <script>
 import Swiper from '../../static/js/swiper4';
-import TeacherList from './public/teacherList'
+import TeacherList from './public/teacherList';
+
 export default {
+  components: {
+    TeacherList
+  },
   data () {
     return {
       HomeData: {}
@@ -81,10 +85,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../../static/css/_mixin.scss";
 @import "../../static/css/swiper4.css";
-
+#app{
+  background: #fff;
+}
 .header {
   width: 100%;
   height: rem(40);
@@ -111,7 +117,7 @@ export default {
   vertical-align: top;
   line-height: 16px;
 }
-/*轮播*/
+/* 轮播 */
 .swiper-container {
   width: 100%;
   height: rem(125);
