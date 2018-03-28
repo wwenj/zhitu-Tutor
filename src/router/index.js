@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home'
-import TeacherClass from '@/components/classification'
+// import Home from '@/components/home'
+// import TeacherClass from '@/components/classification'
+// import Login from '@/components/public/login'
+// import User from '@/components/user/user'
 
 Vue.use(Router)
 
@@ -11,12 +13,36 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: (resolve) => require(['@/components/home'], resolve)
+      // component: Home
     },
     {
       path: '/teacher_class',
       name: 'TeacherClass',
-      component: TeacherClass
+      component: (resolve) => require(['@/components/public/classification'], resolve)
+      // component: TeacherClass
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: (resolve) => require(['@/components/public/login'], resolve)
+      // component: Login
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: (resolve) => require(['@/components/user/user'], resolve)
+      // component: User
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: (resolve) => require(['@/components/public/register'], resolve)
+    },
+    {
+      path: '/teacher_detail',
+      name: 'teacherXiangQing',
+      component: (resolve) => require(['@/components/teacher/teacherXiangQing'], resolve)
     }
   ]
 })

@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-<h1>分类页面</h1>
+teacher
   </div>
 </template>
 
 <script>
 export default {
+  props: {},
   data () {
     return {
-
     };
   },
   mounted () {
-    /* ajax */
     // this.homeAjax();
   },
   methods: {
@@ -40,7 +39,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "../../static/css/_mixin.scss";
+<style scoped lang="scss">
+@import "../../../static/css/_mixin.scss";
+
 
 </style>

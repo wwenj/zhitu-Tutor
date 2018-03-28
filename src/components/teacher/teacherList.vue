@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 <!-- <p>教师列表{{teacherLists}}</p> -->
-  <div class="teacher" v-for="(item,index) in teacherLists">
+  <div class="teacher" v-for="(item,index) in teacherLists" @click="toDetail(item.id)">
     <img :src="item.image" alt="教师头像">
     <div class="teacher-con">
       <p class="one">
@@ -58,6 +58,10 @@ export default {
     //       alert('ajax请求出错，错误信息：' + err);
     //     });
     // }
+    toDetail: function (id) {
+      sessionStorage.setItem("teacher_id", id);
+      location.href = '/teacher_detail';
+    }
   }
 };
 </script>

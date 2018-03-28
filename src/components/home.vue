@@ -5,7 +5,7 @@
       <img class="header-logo" src="../../static/img/logo.png" alt="">
       <div class="header-my">
         <img src="../../static/img/my.png" alt="">
-        <span>我的</span>
+        <span @click="toMy">我的</span>
       </div>
     </div>
     <!-- 首页轮播 -->
@@ -36,7 +36,7 @@
 
 <script>
 import Swiper from '../../static/js/swiper4';
-import TeacherList from './public/teacherList';
+import TeacherList from './teacher/teacherList';
 
 export default {
   components: {
@@ -70,7 +70,7 @@ export default {
         params: {
           ID: 12345 // 请求参数
         },
-        timeout: 2000, // 超时请求
+        // timeout: 2000, // 超时请求
         withCredentials: false, // 跨域不带凭证 默认
         responseType: 'json' // 响应数据类型 默认
       })
@@ -80,6 +80,16 @@ export default {
         .catch(function (err) {
           alert('ajax请求出错，错误信息：' + err);
         });
+    },
+    /* 查询是否已登录，并跳转到相应页面 */
+    toMy: function () {
+      let ztData = localStorage.getItem('zt_data');
+      console.log(ztData)
+      if (!ztData) {
+        location.href = '/login';
+      } else {
+        location.href = '/user';
+      }
     }
   }
 };

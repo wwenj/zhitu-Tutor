@@ -8,11 +8,12 @@ import axios from 'axios'
 Vue.config.productionTip = false;
 
 Vue.prototype.axios = axios;
-// const localData = localStorage.getItem('zt_data');
-// if (localData !== '' && localData) {
-//   const ztData = JSON.parse(localData);
-//   axios.defaults.headers.common['access-token'] = ztData.token;
-// }
+
+const localData = localStorage.getItem('zt_data');
+if (localData !== '' && localData) {
+  const ztData = JSON.parse(localData);
+  axios.defaults.headers.common['access-token'] = ztData.token;
+}
 
 /* eslint-disable no-new */
 new Vue({
