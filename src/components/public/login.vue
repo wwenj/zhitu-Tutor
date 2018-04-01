@@ -36,20 +36,20 @@ export default {
       })
         .then(res => {
           if (res.data.error_code === 0) {
-            localStorage.setItem('zt_data', JSON.stringify(res.data.data));
-            location.href = '/user';
+            localStorage.setItem('zt_data',  JSON.stringify(res.data.data));
+            location.href = '#/user';
             // if (this.id !== "" && this.from !== "") {
             //   location.href = `#/teacher_detail/${that.id}`;
             // } else {
             //   location.href = "#/public_personal_center";
             // }
           } else {
-            alert(res.data.message)
+            alert(res.data.message);
           }
         });
     },
     register: function () {
-      location.href = '/register';
+      location.href = '#/register';
     }
   }
 };

@@ -8,7 +8,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -43,6 +43,11 @@ export default new Router({
       path: '/teacher_detail',
       name: 'teacherXiangQing',
       component: (resolve) => require(['@/components/teacher/teacherXiangQing'], resolve)
+    },
+    {
+      path: '/fastlogin',
+      name: 'fastLogin',
+      component: (resolve) => require(['@/components/public/fastLogin'], resolve)
     }
   ]
 })

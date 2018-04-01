@@ -21,12 +21,12 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'no-new':'off',
     "semi": [0, "always"], //强制语句分号结尾
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    "properties": "never",
     "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }]
   }
 }

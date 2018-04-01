@@ -59,8 +59,8 @@ export default {
     //     });
     // }
     toDetail: function (id) {
-      sessionStorage.setItem("teacher_id", id);
-      location.href = '/teacher_detail';
+      sessionStorage.setItem('teacher_id', id);
+      location.href = '#/teacher_detail';
     }
   }
 };

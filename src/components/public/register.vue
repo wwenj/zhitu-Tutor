@@ -2,7 +2,10 @@
   <div id="app">
     <input type="text" v-model="phone" placeholder="请输入手机号">
     <input type="text" v-model="code" placeholder="请输入验证码">
-    <span class="conmeCode" @click="send">获取验证码</span>
+    <span class="conmeCode" @click="flag && send()">
+      <span v-if="yan===1">获取验证码</span>
+      <span v-if="yan===0" class="conmeCode-two">{{yanTime}}秒内有效</span>
+    </span>
     <div class="p-box">
       <p :class="{change:chan}" @click="studentChoice">我是家长/学生</p>
       <p :class="{change:!chan}" @click="teacherChoice">我是教师</p>
@@ -17,38 +20,35 @@ export default {
   props: {},
   data () {
     return {
+      /* 验证码点击换文字 */
+      yan: 1,
+      /* 再次注册等待时间 */
+      yanTime: 60,
+      /* 注册事件取消标志 */
+      flag: true,
+      /* 我是家长与教师选择标志 */
+      chan: 1,
       phone: '',
       code: '',
-      chan: 1,
       data: ''
     };
   },
-  mounted () {
-    // this.homeAjax();
-  },
   methods: {
-    // homeAjax: function () {
-    //   var that = this;
-    //   this.axios({
-    //     url: 'http://api.zhituteam.com/api/index',
-    //     method: 'get',
-    //     params: {
-    //       ID: 12345 // 请求参数
-    //     },
-    //     timeout: 2000, // 超时请求
-    //     withCredentials: false, // 跨域不带凭证 默认
-    //     responseType: 'json' // 响应数据类型 默认
-    //   })
-    //     .then(function (res) {
-    //       that.HomeData = res.data.data;
-    //       console.log(that.HomeData)
-    //     })
-    //     .catch(function (err) {
-    //       alert('ajax请求出错，错误信息：' + err);
-    //     });
-    // }
     send: function () {
       var that = this;
+      /* 点击延时60秒才能再次点击 */
+      this.yan = 0;
+      this.flag = false;
+      var yanTimer = setInterval(function () {
+        that.yanTime = that.yanTime - 1;
+        if (that.yanTime < 0) {
+          that.yan = 1; // 切换文字
+          that.yanTime = 60; // 切换回时间
+          that.flag = true; // 放开事件
+          clearInterval(yanTimer);
+        }
+      }, 1000);
+      /* 验证码请求 */
       this.axios({
         url: 'http://api.zhituteam.com/api/cmn/sms/send',
         method: 'post',
@@ -59,7 +59,13 @@ export default {
         responseType: 'json' // 响应数据类型 默认
       })
         .then(function (res) {
-          that.data = res.data.data;
+          if (res.data.error_code === 0){
+            that.data = res.data.data;
+          }else{
+            alert(res.data.message);
+            that.yanTime = 0;
+          }
+
         })
         .catch(function (err) {
           alert('ajax请求出错，错误信息：' + err);
@@ -85,7 +91,12 @@ export default {
         responseType: 'json' // 响应数据类型 默认
       })
         .then(function (res) {
-          alert('OK' + res)
+          if (res.data.error_code === 0) {
+            localStorage.setItem('zt_data', JSON.stringify(res.data.data));
+            location.href = '#/fastLogin';
+          } else {
+            alert(res.data.message);
+          }
         })
         .catch(function (err) {
           alert('ajax请求出错，错误信息：' + err);
@@ -126,6 +137,9 @@ input {
   position: absolute;
   top: rem(70);
   right: rem(15);
+}
+.conmeCode .conmeCode-two{
+  color: #cfcdcd;
 }
 .p-box{
   width:100%;

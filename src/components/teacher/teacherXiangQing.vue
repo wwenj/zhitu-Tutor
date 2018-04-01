@@ -40,6 +40,22 @@
         <p class="int">{{item.content}}</p>
     </div>
   </div>
+  <div class="bottom-line">
+    <p>满意就预约吧</p>
+    <hr>
+  </div>
+  <div class="bottom-nav">
+    <span class="collect" @click="collectBtn">
+      <img v-if="collection" src="../../../static/img/detail_star_white.png" alt="">
+      <img v-else src="../../../static/img/detail_star_yellow.png" alt="">
+      <span v-if="collection">收藏</span>
+      <span v-else>已收藏</span>
+    </span>
+    <div class="shijiang-box" @click="yuyueBtn">
+      <span v-if="yuyue" class="shijiang">预约试讲</span>
+      <span v-else class="shijiang" style="background: rgb(102, 102, 102);">已预约</span>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -48,7 +64,9 @@ export default {
   props: {},
   data () {
     return {
-      datailData: {}
+      datailData: {},
+      collection: 1,
+      yuyue: 1
     };
   },
   mounted () {
@@ -73,6 +91,20 @@ export default {
         .catch(function (err) {
           alert('ajax请求出错，错误信息：' + err);
         });
+    },
+    /* 点击收藏 */
+    collectBtn: function ()  {
+      if (this.collection == 0) {
+        this.collection = 1
+      } else {
+        this.collection = 0
+      }
+    },
+    /* 点击预约 */
+    yuyueBtn: function () {
+      if (this.yuyue == 1) {
+        this.yuyue = 0
+      }
     }
   }
 };
@@ -162,7 +194,7 @@ export default {
 }
 .conBox{
   width: 100%;
-  padding: rem(15) rem(15);
+  padding: rem(15) rem(15) rem(15) rem(10);
   box-sizing: border-box;
   background: #fff;
 }
@@ -197,5 +229,74 @@ h3{
 }
 .teacher-case{
   border-bottom: 1px solid rgb(206, 204, 204);
+}
+/* 底部分割线 */
+.bottom-line{
+  width: 100%;
+  height:rem(60);
+  padding: rem(25) rem(30);
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: rem(50);
+}
+.bottom-line p{
+  width: rem(100);
+  color: #9e9c9c;
+  font-size: rem(15);
+  position: absolute;
+  top:rem(20);
+  left: 50%;
+  margin-left: rem(-50);
+  text-align: center;
+  background:#F5F5F5;
+  z-index: 10;
+}
+hr{
+  width: rem(222);
+  position: absolute;
+  top:rem(15);
+  left: 50%;
+  margin-left: rem(-111);
+  border-top: 1px solid #9e9c9c;
+}
+.bottom-nav{
+  width: 100%;
+  height: rem(50);
+  background: #2dc072;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+}
+.bottom-nav span{
+  display: inline-block;
+}
+.collect{
+  width: 14%;
+  height: 100%;
+  background: #00000023;
+  text-align: center;
+  font-size: rem(14);
+  color: #fff;
+}
+.collect img{
+  width: rem(20);
+  height: rem(20);
+  vertical-align: rem(-10);
+}
+.collect span{
+  display: block;
+}
+.shijiang-box{
+  flex-grow:1;
+}
+.shijiang{
+  width: 100%;
+  height: 100%;
+  background: #2dc072;
+  text-align: center;
+  line-height: rem(50);
+  color: #fff;
 }
 </style>

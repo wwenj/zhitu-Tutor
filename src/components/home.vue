@@ -51,7 +51,7 @@ export default {
     /* ajax */
     this.homeAjax();
     /* 轮播图 */
-    var mySwiper = new Swiper('.swiper-container', {
+    new Swiper('.swiper-container', {
       direction: 'horizontal',
       loop: true,
       // 如果需要分页器
@@ -86,9 +86,9 @@ export default {
       let ztData = localStorage.getItem('zt_data');
       console.log(ztData)
       if (!ztData) {
-        location.href = '/login';
+        location.href = '#/login';
       } else {
-        location.href = '/user';
+        location.href = '#/user';
       }
     }
   }

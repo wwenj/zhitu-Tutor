@@ -2,9 +2,9 @@
   <div id="app">
     <div class="head">
       <div class="head-pic">
-        <img :src="user.user.image" alt="">
+        <img v-if="user" :src="user.user.image" alt="">
       </div>
-        <span class="phone">{{user.user.phone}}</span>
+        <span v-if="user" class="phone">{{user.user.phone}}</span>
         <span class="chage">编辑</span>
     </div>
     <ul class="user-midd">
@@ -43,21 +43,20 @@ export default {
   props: {},
   data () {
     return {
-      user: {}
+      user: ''
     };
   },
   mounted () {
-    this.homeAjax();
+    this.userAjax();
   },
   methods: {
-    homeAjax: function () {
+    userAjax: function () {
       var that = this;
       this.axios({
         url: 'http://api.zhituteam.com/api/user/info',
         method: 'get',
         params: {
         },
-        timeout: 2000, // 超时请求
         withCredentials: false, // 跨域不带凭证 默认
         responseType: 'json' // 响应数据类型 默认
       })
