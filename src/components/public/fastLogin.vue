@@ -29,7 +29,7 @@ export default {
         responseType: 'json' // 响应数据类型 默认
       })
         .then(function (res) {
-          if (res.data.error_code) {
+          if (res.data.error_code === 0) {
             location.href = '#/user';
           } else {
             alert(res.data.message);

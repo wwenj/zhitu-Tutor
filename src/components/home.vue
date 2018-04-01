@@ -59,7 +59,6 @@ export default {
         el: '.swiper-pagination'
       }
     });
-    // console.log(mySwiper)
   },
   methods: {
     homeAjax: function () {
@@ -70,7 +69,6 @@ export default {
         params: {
           ID: 12345 // 请求参数
         },
-        // timeout: 2000, // 超时请求
         withCredentials: false, // 跨域不带凭证 默认
         responseType: 'json' // 响应数据类型 默认
       })

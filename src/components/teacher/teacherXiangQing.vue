@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="datailData">
     <div class="teacher">
       <img :src="datailData.image" alt="教师头像">
       <div class="teacher-con">
@@ -64,7 +64,7 @@ export default {
   props: {},
   data () {
     return {
-      datailData: {},
+      datailData: '',
       collection: 1,
       yuyue: 1
     };
