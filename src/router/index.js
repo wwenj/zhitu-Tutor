@@ -48,6 +48,11 @@ export default new Router({
       path: '/fastlogin',
       name: 'fastLogin',
       component: (resolve) => require(['@/components/public/fastLogin'], resolve)
+    },
+    {
+      path: '/teacher',
+      name: 'Teacher',
+      component: (resolve) => require(['@/components/teacher/teacher'], resolve)
     }
   ]
 })

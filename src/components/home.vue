@@ -11,7 +11,7 @@
     <!-- 首页轮播 -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="item in HomeData.banner"><img class="banner-img" :src='item.image' ></div>
+          <div class="swiper-slide" v-for="(item,index) in HomeData.banner" :key="index"><img class="banner-img" :src='item.image' ></div>
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
@@ -19,7 +19,7 @@
     </div>
 <!-- 中间分类导航 -->
     <ul class="nav-box">
-      <li v-for="item in HomeData.subjects">
+      <li v-for="(item,index) in HomeData.subjects" :key="index">
         <router-link to="/teacher_class" class="router-link">
           <img :src=item.icon alt="">
         </router-link>
@@ -82,7 +82,6 @@ export default {
     /* 查询是否已登录，并跳转到相应页面 */
     toMy: function () {
       let ztData = localStorage.getItem('zt_data');
-      console.log(ztData)
       if (!ztData) {
         location.href = '#/login';
       } else {

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div class="head">
+    <div class="head" v-if="user">
       <div class="head-pic">
-        <img v-if="user" :src="user.user.image" alt="">
+        <img :src="user.user.image" alt="">
       </div>
-        <span v-if="user" class="phone">{{user.user.phone}}</span>
+        <span class="phone">{{user.user.phone}}</span>
         <span class="chage">编辑</span>
     </div>
     <ul class="user-midd">

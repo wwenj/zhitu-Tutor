@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     newPass: function () {
-      var that = this;
+      // var that = this;
       this.axios({
         url: 'http://api.zhituteam.com/api/user/firstSetPassword',
         method: 'post',

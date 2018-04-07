@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 <!-- <p>教师列表{{teacherLists}}</p> -->
-  <div class="teacher" v-for="(item,index) in teacherLists" @click="toDetail(item.id)">
+  <div class="teacher" v-for="(item,index) in teacherLists" @click="toDetail(item.id)" :key="index">
     <img :src="item.image" alt="教师头像">
     <div class="teacher-con">
       <p class="one">

@@ -59,25 +59,24 @@ export default {
         responseType: 'json' // 响应数据类型 默认
       })
         .then(function (res) {
-          if (res.data.error_code === 0){
+          if (res.data.error_code === 0) {
             that.data = res.data.data;
-          }else{
+          } else {
             alert(res.data.message);
             that.yanTime = 0;
           }
-
         })
         .catch(function (err) {
           alert('ajax请求出错，错误信息：' + err);
         });
     },
     login: function () {
-      // var that = this;
-      var role_type = 1;
+      var that = this;
+      var role_type = 1;  //eslint-disable-line
       if (this.chan === 1) {
-        role_type = 1
+        role_type = 1 //eslint-disable-line
       } else {
-        role_type = 2
+        role_type = 2 //eslint-disable-line
       }
       this.axios({
         url: 'http://api.zhituteam.com/api/user/fastLogin',
@@ -93,7 +92,17 @@ export default {
         .then(function (res) {
           if (res.data.error_code === 0) {
             localStorage.setItem('zt_data', JSON.stringify(res.data.data));
-            location.href = '#/fastLogin';
+            /* token加入localsion后需要重新配置一下发送头 */
+            that.axios.defaults.headers.common['access-token'] = res.data.data.token;
+            if (res.data.data.setpass === 0) { // 确定用户是否需要创建密码
+              if (res.data.data.role_type === 1) {
+                location.href = '#/user';
+              } else {
+                location.href = '#/teacher';
+              }
+            } else {
+              location.href = '#/fastLogin';
+            }
           } else {
             alert(res.data.message);
           }

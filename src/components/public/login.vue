@@ -36,8 +36,14 @@ export default {
       })
         .then(res => {
           if (res.data.error_code === 0) {
-            localStorage.setItem('zt_data',  JSON.stringify(res.data.data));
-            location.href = '#/user';
+            localStorage.setItem('zt_data', JSON.stringify(res.data.data));
+            /* token加入localsion后需要重新配置一下发送头 */
+            that.axios.defaults.headers.common['access-token'] = res.data.data.token;
+            if (res.data.data.role_type === 1) {
+              location.href = '#/user';
+            } else {
+              location.href = '#/teacher';
+            }
             // if (this.id !== "" && this.from !== "") {
             //   location.href = `#/teacher_detail/${that.id}`;
             // } else {

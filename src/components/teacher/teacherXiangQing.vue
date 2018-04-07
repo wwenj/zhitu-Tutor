@@ -35,7 +35,7 @@
       <img src="../../../static/img/detail_reward.png" alt="">
       成功案例
     </h2>
-    <div class="teacher-case" v-for="item in datailData.teacher_case">
+    <div class="teacher-case" v-for="(item,index) in datailData.teacher_case" :key="index">
         <h3>{{item.title}}</h3>
         <p class="int">{{item.content}}</p>
     </div>
@@ -93,8 +93,8 @@ export default {
         });
     },
     /* 点击收藏 */
-    collectBtn: function ()  {
-      if (this.collection == 0) {
+    collectBtn: function () {
+      if (this.collection === 0) {
         this.collection = 1
       } else {
         this.collection = 0
@@ -102,7 +102,7 @@ export default {
     },
     /* 点击预约 */
     yuyueBtn: function () {
-      if (this.yuyue == 1) {
+      if (this.yuyue === 1) {
         this.yuyue = 0
       }
     }
