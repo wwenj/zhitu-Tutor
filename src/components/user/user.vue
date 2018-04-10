@@ -5,10 +5,10 @@
         <img :src="user.user.image" alt="">
       </div>
         <span class="phone">{{user.user.phone}}</span>
-        <span class="chage">编辑</span>
+        <span class="chage" @click="userInfo">编辑</span>
     </div>
     <ul class="user-midd">
-      <li>
+      <li @click="collect">
         <img src="../../../static/img/detail_star_midd.png" alt="">
         <span>我的收藏</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
@@ -28,7 +28,7 @@
         <span>客服电话</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
       </li>
-      <li>
+      <li @click="about">
         <img src="../../../static/img/me_about_us.png" alt="">
         <span>关于知途家教</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
@@ -70,6 +70,17 @@ export default {
     clickOut: function () {
       localStorage.clear();
       location.href = '/';
+    },
+    userInfo: function () {
+      location.href = '#/user_info'
+    },
+    /* 收藏 */
+    collect: function () {
+      location.href = '#/user_collect'
+    },
+    /* 关于 */
+    about: function () {
+      location.href = '#/about'
     }
   }
 };

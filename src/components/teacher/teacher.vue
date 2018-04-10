@@ -1,26 +1,32 @@
 <template>
   <div id="app">
-    <div class="head" v-if="teacher">
-      <div class="head-pic">
-        <img :src="teacher.teacher.image" alt="">
+    <div class="teacher" v-if="teacher">
+    <img :src="teacher.teacher.image" alt="教师头像">
+    <div class="teacher-con">
+      <p class="one">
+        <span class="name">{{teacher.teacher.name}}</span>
+        <span class="sub">数</span>
+        <span class="grade">小</span>
+        <span class="grade">初</span>
+        <span class="grade">高</span>
+        <span class="tech-time" @click="teacherInfo">编辑资料</span>
+      </p>
+      <div class="three-box">
+        <span class="three">专职教师</span>
+        <span class="three">已认证</span>
+        <span class="three">明星教师</span>
       </div>
-        <span class="phone">{{teacher.teacher.phone}}</span>
-        <span class="chage">编辑</span>
+    </div>
     </div>
     <ul class="user-midd">
       <li>
-        <img src="../../../static/img/detail_star_midd.png" alt="">
-        <span>我的收藏</span>
-        <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
-      </li>
-      <li>
         <img src="../../../static/img/me_try.png" alt="">
-        <span>查看试讲</span>
+        <span>我的课程</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
       </li>
       <li>
         <img src="../../../static/img/me_course.png" alt="">
-        <span>我的课堂</span>
+        <span>我的试讲</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
       </li>
       <li class="contact">
@@ -28,7 +34,7 @@
         <span>客服电话</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
       </li>
-      <li>
+      <li @click="about">
         <img src="../../../static/img/me_about_us.png" alt="">
         <span>关于知途家教</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
@@ -70,6 +76,13 @@ export default {
     clickOut: function () {
       localStorage.clear();
       location.href = '/';
+    },
+    teacherInfo: function () {
+      location.href = '#/teacher_info'
+    },
+    /* 关于 */
+    about: function () {
+      location.href = '#/about'
     }
   }
 };
@@ -155,5 +168,71 @@ export default {
   color: red;
   font-size: rem(16);
   outline: none;
+}
+/* 头部信息 */
+.teacher{
+  width: 100%;
+  height: rem(110);
+  background: #fff;
+  margin-bottom: rem(10);
+  position: relative;
+  padding-left: rem(110);
+  box-sizing: border-box;
+}
+.teacher img{
+  width: rem(80);
+  height: rem(80);
+  position: absolute;
+  top:rem(15);
+  left: rem(15);
+}
+.teacher-con{
+  width: 100%;
+  height: 100%;
+  padding: rem(15) 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.one{
+  font-size: rem(15);
+}
+.one span{
+  display: inline-block;
+}
+.sub{
+  padding: 0 rem(4);
+  color: #fff;
+  border-radius: rem(3);
+  background: #52c644;
+  font-size: rem(12);
+  line-height: rem(18);
+  border:1px solid #52c644;
+}
+.grade{
+  padding: 0 rem(1);
+  color: #097c25;
+  border-radius: rem(3);
+  font-size: rem(11);
+  line-height: rem(18);
+  border:1px solid #097c25;
+}
+.tech-time{
+  float: right;
+  font-size: rem(13);
+  color: #cecece;
+  margin-right: rem(15);
+  margin-top: rem(4);
+}
+.three-box{
+  position: absolute;
+  bottom: rem(15);
+}
+.three{
+  font-size: rem(13);
+  padding-left: rem(15);
+  background-image: url('../../../static/img/accept.png');
+  background-repeat: no-repeat;
+  background-size: rem(15) rem(15);
+  background-position: 0 rem(2);
 }
 </style>

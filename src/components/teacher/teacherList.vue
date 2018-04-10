@@ -6,15 +6,15 @@
     <div class="teacher-con">
       <p class="one">
         <span class="name">{{item.name}}</span>
-        <span class="sub">{{item.subject[0].label}}</span>
-        <span class="grade">{{item.grade[0].label}}</span>
+        <span class="sub" v-for="(item1,index) in item.subject" :key="index">{{item1.label}}</span>
+        <span class="grade" v-for="(item2,index) in item.grade" :key="index+1">{{item2.label}}</span>
         <span class="tech-time">授课{{item.teach_time}}小时</span>
       </p>
       <p class="two">
         {{item.teach_year}}年教龄
       </p>
-      <p class="three">
-        {{item.extend_tag[0].label}}
+      <p class="three" v-for="(item3,index) in item.extend_tag" :key="index">
+        {{item3.label}}
       </p>
     </div>
   </div>

@@ -46,13 +46,13 @@
   </div>
   <div class="bottom-nav">
     <span class="collect" @click="collectBtn">
-      <img v-if="collection" src="../../../static/img/detail_star_white.png" alt="">
+      <img v-if="!collection" src="../../../static/img/detail_star_white.png" alt="">
       <img v-else src="../../../static/img/detail_star_yellow.png" alt="">
-      <span v-if="collection">收藏</span>
+      <span v-if="!collection">收藏</span>
       <span v-else>已收藏</span>
     </span>
     <div class="shijiang-box" @click="yuyueBtn">
-      <span v-if="yuyue" class="shijiang">预约试讲</span>
+      <span v-if="!yuyue" class="shijiang">预约试讲</span>
       <span v-else class="shijiang" style="background: rgb(102, 102, 102);">已预约</span>
     </div>
   </div>
@@ -66,7 +66,8 @@ export default {
     return {
       datailData: '',
       collection: 1,
-      yuyue: 1
+      yuyue: '',
+      id: ''
     };
   },
   mounted () {
@@ -74,19 +75,21 @@ export default {
   },
   methods: {
     teacherDetailAjax: function () {
-      var id = sessionStorage.getItem('teacher_id')
+      this.id = sessionStorage.getItem('teacher_id')
       var that = this;
       this.axios({
         url: 'http://api.zhituteam.com/api/teacher/info',
         method: 'get',
         params: {
-          id: id
+          id: this.id
         },
         withCredentials: false, // 跨域不带凭证 默认
         responseType: 'json' // 响应数据类型 默认
       })
         .then(function (res) {
           that.datailData = res.data.data.teacher;
+          that.collection = res.data.data.teacher.is_collect;
+          that.yuyue = res.data.data.teacher.is_select;
         })
         .catch(function (err) {
           alert('ajax请求出错，错误信息：' + err);
@@ -94,17 +97,42 @@ export default {
     },
     /* 点击收藏 */
     collectBtn: function () {
-      if (this.collection === 0) {
-        this.collection = 1
-      } else {
+      if (this.collection === 1) {
+        this.collectAuto('collect/del',this.id);
         this.collection = 0
+      } else {
+        this.collectAuto('collect/add',this.id);
+        this.collection = 1
       }
     },
     /* 点击预约 */
     yuyueBtn: function () {
-      if (this.yuyue === 1) {
-        this.yuyue = 0
+      if (this.yuyue === 0) {
+        this.collectAuto('coursetrial/add',this.id);
+        this.yuyue = 1
       }
+    },
+    /* 点击收藏 */
+    collectAuto: function (url,tid) {
+      this.axios({
+        url: 'http://api.zhituteam.com/api/'+url,
+        method: 'get',
+        params: {
+          tid: tid
+        },
+        withCredentials: false, // 跨域不带凭证 默认
+        responseType: 'json' // 响应数据类型 默认
+      })
+        .then(function (res) {
+          if (res.data.error_code === 0) {
+            console.log('操作成功')
+          } else {
+            alert(res.data.message)
+          }
+        })
+        .catch(function (err) {
+          alert('ajax请求出错，错误信息：' + err);
+        });
     }
   }
 };

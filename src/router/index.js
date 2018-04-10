@@ -53,6 +53,26 @@ export default new Router({
       path: '/teacher',
       name: 'Teacher',
       component: (resolve) => require(['@/components/teacher/teacher'], resolve)
+    },
+    {
+      path: '/user_info',
+      name: 'UserInfo',
+      component: (resolve) => require(['@/components/user/userInfo'], resolve)
+    },
+    {
+      path: '/teacher_info',
+      name: 'TeacherInfo',
+      component: (resolve) => require(['@/components/teacher/teacherInfo'], resolve)
+    },
+    {
+      path: '/user_collect',
+      name: 'UserCollect',
+      component: (resolve) => require(['@/components/user/userCollect'], resolve)
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: (resolve) => require(['@/components/public/about'], resolve)
     }
   ]
 })
