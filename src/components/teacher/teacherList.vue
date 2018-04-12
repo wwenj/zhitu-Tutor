@@ -130,9 +130,12 @@ export default {
   font-size: rem(13);
 }
 .three{
-  position: absolute;
-  bottom: rem(15);
-  font-size: rem(13);
+  // position: absolute;
+  // bottom: rem(15);
+  // font-size: rem(13);
+  display: inline-block;
+  margin-top: rem(18);
+  margin-right: rem(5);
   padding-left: rem(15);
   background-image: url('../../../static/img/accept.png');
   background-repeat: no-repeat;

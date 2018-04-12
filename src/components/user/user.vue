@@ -8,17 +8,17 @@
         <span class="chage" @click="userInfo">编辑</span>
     </div>
     <ul class="user-midd">
-      <li @click="collect">
+      <li @click="toCollect">
         <img src="../../../static/img/detail_star_midd.png" alt="">
         <span>我的收藏</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
       </li>
-      <li>
+      <li @click="toCourse">
         <img src="../../../static/img/me_try.png" alt="">
         <span>查看试讲</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
       </li>
-      <li>
+      <li @click="toCourse">
         <img src="../../../static/img/me_course.png" alt="">
         <span>我的课堂</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
@@ -28,7 +28,7 @@
         <span>客服电话</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
       </li>
-      <li @click="about">
+      <li @click="toAbout">
         <img src="../../../static/img/me_about_us.png" alt="">
         <span>关于知途家教</span>
         <img class="img-right" src="../../../static/img/me_arrow.png" alt="">
@@ -75,12 +75,16 @@ export default {
       location.href = '#/user_info'
     },
     /* 收藏 */
-    collect: function () {
+    toCollect: function () {
       location.href = '#/user_collect'
     },
     /* 关于 */
-    about: function () {
+    toAbout: function () {
       location.href = '#/about'
+    },
+    /* 我的课程 */
+    toCourse: function () {
+      location.href = '#/user_course'
     }
   }
 };

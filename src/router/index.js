@@ -73,6 +73,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: (resolve) => require(['@/components/public/about'], resolve)
+    },
+    {
+      path: '/user_course',
+      name: 'UserCourse',
+      component: (resolve) => require(['@/components/user/userCourse'], resolve)
     }
   ]
 })

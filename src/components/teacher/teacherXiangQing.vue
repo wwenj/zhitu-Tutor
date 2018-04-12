@@ -97,25 +97,39 @@ export default {
     },
     /* 点击收藏 */
     collectBtn: function () {
-      if (this.collection === 1) {
-        this.collectAuto('collect/del',this.id);
-        this.collection = 0
+      const localData = localStorage.getItem('zt_data');
+      const ztData = JSON.parse(localData);
+      if (!ztData) {
+        location.href = '#/login';
+        alert('请先登录');
       } else {
-        this.collectAuto('collect/add',this.id);
-        this.collection = 1
+        if (this.collection === 1) {
+          this.collectAuto('collect/del', this.id);
+          this.collection = 0;
+        } else {
+          this.collectAuto('collect/add', this.id);
+          this.collection = 1;
+        }
       }
     },
     /* 点击预约 */
     yuyueBtn: function () {
-      if (this.yuyue === 0) {
-        this.collectAuto('coursetrial/add',this.id);
-        this.yuyue = 1
+      const localData = localStorage.getItem('zt_data');
+      const ztData = JSON.parse(localData);
+      if (!ztData) {
+        location.href = '#/login';
+        alert('请先登录');
+      } else {
+        if (this.yuyue === 0) {
+          this.collectAuto('coursetrial/add', this.id);
+          this.yuyue = 1;
+        }
       }
     },
     /* 点击收藏 */
-    collectAuto: function (url,tid) {
+    collectAuto: function (url, tid) {
       this.axios({
-        url: 'http://api.zhituteam.com/api/'+url,
+        url: 'http://api.zhituteam.com/api/' + url,
         method: 'get',
         params: {
           tid: tid

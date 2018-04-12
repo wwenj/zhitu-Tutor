@@ -19,7 +19,7 @@
     </div>
 <!-- 中间分类导航 -->
     <ul class="nav-box">
-      <li v-for="(item,index) in HomeData.subjects" :key="index">
+      <li v-for="(item,index) in HomeData.subjects" :key="index" @click="toClass(item.id)">
         <router-link to="/teacher_class" class="router-link">
           <img :src=item.icon alt="">
         </router-link>
@@ -95,6 +95,9 @@ export default {
           localStorage.clear();
         }
       }
+    },
+    toClass: function (index) {
+      sessionStorage.setItem('subjectNum', index);
     }
   }
 };
@@ -166,7 +169,7 @@ export default {
 }
 .hot-teacher{
   width: 100%;
-  height: 100%;
+  // height: 100%;
   box-sizing: border-box;
   padding: rem(15);
   font-size: rem(18);
