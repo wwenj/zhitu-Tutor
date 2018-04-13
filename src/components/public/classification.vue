@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div class="head">
-      <span @click="grade" class="btm" :class="headAuto==1?'headColor':''">年级</span>|
-      <span @click="subject" class="btm" :class="headAuto==2?'headColor':''">科目</span>|
-      <span @click="type" class="btm" :class="headAuto==3?'headColor':''">教师类型</span>
+      <span @click="grade" class="btm" :class="headAuto==1?'headColor':''">{{ gradeName }}</span>|
+      <span @click="subject" class="btm" :class="headAuto==2?'headColor':''">{{ subjectName }}</span>|
+      <span @click="type" class="btm" :class="headAuto==3?'headColor':''">{{ typeName }}</span>
     </div>
     <div v-if="classType" class="headOut">
-      <span v-for="(item,index) in classType" :key="index" @click="classClick(index)">{{item}}</span>
+      <span v-for="(item,index) in classType" :key="index" @click="classClick(index,item)">{{item}}</span>
     </div>
     <TeacherList class="list" v-if="classData" :teacherLists="classData.teacher"></TeacherList>
     <div v-if="mark" @click="markClick" class="mark"></div>
@@ -27,7 +27,10 @@ export default {
       gradeNum: 0, // 年级
       typeNum: 0, // 身份
       subjectNum: 0, // 学科
-      mark: 0 // 遮罩
+      mark: 0, // 遮罩
+      gradeName: '年级',
+      subjectName: '科目',
+      typeName: '教师类型'
     };
   },
   mounted () {
@@ -71,18 +74,19 @@ export default {
       })
         .then(function (res) {
           that.classData = res.data.data;
-          console.log(that.classData)
         })
         .catch(function (err) {
           alert('ajax请求出错，错误信息：' + err);
         });
     },
-    classClick: function (num) {
+    classClick: function (num, item) {
       switch (this.headAuto) {
         case 1:
+          this.gradeName = item;
           this.gradeNum = num;
           break;
         case 2:
+          this.subjectName = item;
           if (num > 0) {
             this.subjectNum = num + 12;
           } else {
@@ -90,6 +94,7 @@ export default {
           }
           break;
         case 3:
+          this.typeName = item;
           if (num > 0) {
             this.typeNum = num + 23;
           } else {

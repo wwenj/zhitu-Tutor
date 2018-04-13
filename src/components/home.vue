@@ -86,9 +86,9 @@ export default {
       if (!ztData) {
         location.href = '#/login';
       } else {
-        if (ztData.role_type === 1) {
+        if (Number(ztData.role_type) === 1) {
           location.href = '#/user';
-        } else if (ztData.role_type === 2) {
+        } else if (Number(ztData.role_type) === 2) {
           location.href = '#/teacher';
         } else {
           alert('本地登录记录出错，已清除存储，请重新登录');

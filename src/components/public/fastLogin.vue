@@ -29,8 +29,14 @@ export default {
         responseType: 'json' // 响应数据类型 默认
       })
         .then(function (res) {
-          if (res.data.error_code === 0) {
-            location.href = '#/user';
+          if (res.data.error_code === 400) {
+            const localData = localStorage.getItem('zt_data');
+            const ztData = JSON.parse(localData);
+            if (Number(ztData.role_type) === 1) {
+              location.href = '#/user';
+            } else if (Number(ztData.role_type) === 2) {
+              location.href = '#/teacher';
+            }
           } else {
             alert(res.data.message);
           }
