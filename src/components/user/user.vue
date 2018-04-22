@@ -69,7 +69,7 @@ export default {
     },
     clickOut: function () {
       localStorage.clear();
-      location.href = '/';
+      location.href = '#/';
     },
     userInfo: function () {
       location.href = '#/user_info'

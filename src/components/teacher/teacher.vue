@@ -75,7 +75,7 @@ export default {
     },
     clickOut: function () {
       localStorage.clear();
-      location.href = '/';
+      location.href = '#/';
     },
     teacherInfo: function () {
       location.href = '#/teacher_info'
