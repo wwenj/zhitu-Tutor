@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>知途家教</title><script>window.addEventListener("resize",
+      function() {
+          var MAX_WIDTH = 640,
+          htmlDom = document.querySelector("html"),
+          htmlWidth = htmlDom.clientWidth,
+          screenWidth = screen.width,
+          width = Math.min(htmlWidth, MAX_WIDTH),
+          htmlFontSize = width / 10,
+          preHtmlFontSize = htmlDom.style.fontSize || "";
+          preHtmlFontSize = parseFloat(preHtmlFontSize);
+          if (preHtmlFontSize && htmlFontSize == preHtmlFontSize) {
+              return
+          }
+          if (screenWidth > 750) {
+              htmlFontSize = 37.5
+          };
+          htmlDom.style.fontSize = htmlFontSize + "px"
+      }); !
+      function() {
+          var event = document.createEvent("HTMLEvents");
+          event.initEvent("resize", false, false);
+          window.dispatchEvent(event)
+      } ();</script><link href=./static/css/app.ddcfccc854ac502e6366b0338b032abc.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.7bf53608bd99f03ef1ef.js></script><script type=text/javascript src=./static/js/vendor.6904213a0dda04918470.js></script><script type=text/javascript src=./static/js/app.36713eb5799930f25e89.js></script></body></html>
