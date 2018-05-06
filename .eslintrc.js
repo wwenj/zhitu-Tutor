@@ -22,6 +22,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'no-new': 'off',
+    //'quotes': [1, 'single'],//引号类型 `` "" ''
     "semi": [0, "always"], //强制语句分号结尾
     // allow async-await
     'generator-star-spacing': 'off',
